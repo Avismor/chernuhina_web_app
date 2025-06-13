@@ -1,0 +1,93 @@
+/* Общие стили и сброс */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #222;
+}
+
+/* Фоновый градиент и центрирование */
+body {
+  height: 100vh;
+  background: linear-gradient(135deg, #4e54c8, #8f94fb);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Контейнер формы */
+.auth-container {
+  background-color: #fff;
+  padding: 40px 45px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  width: 360px;
+  text-align: center;
+}
+
+/* Заголовок */
+.auth-container h2 {
+  font-size: 30px;
+  margin-bottom: 28px;
+  color: #4e54c8;
+  font-weight: 700;
+}
+
+/* Поля ввода */
+.auth-container input[type="text"],
+.auth-container input[type="password"] {
+  width: 100%;
+  padding: 14px 18px;
+  margin-bottom: 22px;
+  border: 2px solid #ddd;
+  border-radius: 10px;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.auth-container input[type="text"]:focus,
+.auth-container input[type="password"]:focus {
+  border-color: #4e54c8;
+  outline: none;
+}
+
+/* Кнопка */
+.auth-container button {
+  width: 100%;
+  padding: 14px 0;
+  background-color: #4e54c8;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.auth-container button:hover {
+  background-color: #3b3f9e;
+}
+
+/* Ссылка "Забыли пароль?" */
+.auth-container .register-link {
+  display: block;
+  margin-top: 16px;
+  font-size: 14px;
+  color: #666;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.auth-container .register-link:hover {
+  color: #4e54c8;
+}
+
+/* Адаптивность */
+@media (max-width: 400px) {
+  .auth-container {
+    width: 90%;
+    padding: 30px 20px;
+  }
+}
