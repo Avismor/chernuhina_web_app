@@ -8,6 +8,7 @@ CREATE TABLE users (
     login VARCHAR(50),
     password VARCHAR(50)
 );
+
 INSERT INTO users (login, password) VALUES 
 ('admin', 'secret123'),
 ('user1', 'pass123');

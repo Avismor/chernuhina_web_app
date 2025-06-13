@@ -4,15 +4,14 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Авторизация</title>
+  <title>Регистрация</title>
   <link rel="stylesheet" href="styles/styles.css" />
-  <script scr="scripts/registration.js"></script>
 </head>
 
 <body>
   <div class="auth-container">
     <h2>Регистрация</h2>
-    <form>
+    <form action="back/register.php" method="post">
       <input name="login" type="text" placeholder="Логин" required />
       <input name="password" type="password" placeholder="Пароль" required />
       <button type="submit">Зарегистрироваться</button>
@@ -20,5 +19,4 @@
     <a href="index.html" class="forgot-password">Уже есть аккаунт?</a>
   </div>
 </body>
-
 </html>

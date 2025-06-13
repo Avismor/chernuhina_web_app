@@ -1,24 +1,24 @@
-<?php  
+<?php
+$conn = new mysqli("localhost", "root", "1111", "DB");
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
 
-  // Уязвимый код
-  $conn = new mysqli("localhost", "root", "1111", "DB");
+$login = $_POST['login'];
+$password = $_POST['password'];
 
-  if ($conn->connect_error) {
-      die("Connection failed: " . $conn->connect_error);
-  }
+// Уязвимый запрос (без защиты от SQL-инъекций)
+$sql = "SELECT * FROM users WHERE login = '$login' AND password = '$password'";
+$result = $conn->query($sql);
 
-  $login = htmlspecialchars($_POST['login']);
-  $password  = htmlspecialchars($_POST['password']);
+if ($result && $result->num_rows > 0) {
+    //cookie с именем пользователя, срок 1 час
+    setcookie("user", $login, time() + 3600, "/");
+    header("Location: welcome.php");
+    exit();
+} else {
+    echo "Ошибка авторизации! <a href='../index.html'>Попробовать снова</a>";
+}
 
-  // Опасный запрос (уязвим к SQL-инъекции)
-  $sql = "SELECT * FROM users WHERE login = '$login' AND password = '$password'";
-  $result = $conn->query($sql);
-
-  if ($result->num_rows > 0) {
-      echo "Привет!";
-  } else {
-      echo "Ошибка авторизации!";
-  }
-  $conn->close();
-
+$conn->close();
 ?>
