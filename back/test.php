@@ -15,7 +15,7 @@
   $result = $conn->query($sql);
 
   if ($result->num_rows > 0) {
-      echo "Успешный вход!";
+      echo "Привет!";
   } else {
       echo "Ошибка авторизации!";
   }
